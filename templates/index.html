@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars and People Labeling Pipeline</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Cars and people labeling pipeline</h1>
+    </header>
+    <main>
+        <section id="image-upload">
+            <h2>Upload images</h2>
+            <form id="upload-form" method="post" action="/api/upload" enctype="multipart/form-data">
+                <input type="file" name="image-file" multiple>
+                <button type="submit" id="upload-btn">Upload</button>
+            </form>
+        </section>
+        <section id="analyze-images">
+            <h2>Analyze images</h2>
+            <form id="analyze-form" method="get" action="/api/analyze">
+                <button type="submit" id="analyze-btn">Analyze and clean images</button>
+            </form>
+        </section>
+        <section id="results-placeholder">
+            <h2>Results</h2>
+            <p>Image results will be displayed here after processing.</p>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
